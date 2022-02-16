@@ -22,6 +22,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
     <style>
+        section {
+            scroll-margin-top: 15rem;
+        }
+        
         a:link {
             text-decoration: none;
         }
@@ -32,6 +36,10 @@
         
         a:visited {
             text-decoration: none;
+        }
+        
+        a:hover {
+            color: #2A506A;
         }
         
         .navbar-toggler {
@@ -187,9 +195,10 @@
             padding: 0 0.6em;
         }
         
-        @media only screen and (max-width: 600px) {
+        @media only screen and (max-width: 440px) {
             .position-absolute {
-                bottom: 4.5em !important;
+                bottom: 7em !important;
+                max-width: 5em !important;
             }
         }
         
@@ -211,8 +220,8 @@
 
 <body class="allbodycolor">
 
-    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bgmenugrey">
-        <div class="container ms-lg-4 ms-md-4 p-0 ">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-expand-xl navbar-dark bgmenugrey">
+        <div class="container ">
 
             <a class="navbar-brand ms-3" href="https://www.spectrumstaking.net/"><img src="images/spst_logo.svg" style="width:6em" alt="spectrum staking logo" />
             </a>
@@ -239,11 +248,11 @@
     </nav>
 
     <section class="">
-        <div class="container">
+        <div class="container justify-content-between">
 
             <div class="row align-items-center">
-                <div class="col-12 col-md-5 col-lg-6 pt-5 ps-lg-0">
-                    <h1 class="display-6 text-start ms-4 ms-lg-1 ms-md-1  ">
+                <div class="col-12 col-md-5 col-lg-6 col-xl-6 pt-5 ps-lg-0">
+                    <h1 class="display-6 text-start ms-4 ms-md-5 ms-lg-5 ms-xl-5  ">
                         <b class="text-light text-uppercase">Reliable and Secure Blockchain Validation Services</b>
                     </h1>
                 </div>
@@ -255,10 +264,10 @@
         </div>
     </section>
 
-    <section class="pt-4 pb-4 ms-lg-3 ms-md-3">
-        <div class="container px-4 px-lg-5 px-md-5 ms-0 ms-lg-2 ms-md-2">
+    <section class="col-12 pt-4 pb-4 ">
+        <div class="container ">
             <p class="lead text-start text-md-start text-lg-start mb-6 mb-lg-8 text-light mx-auto ">
-                Spectrum staking services managed by a team of highly-experienced SRE professionals with over 30 years of cumilative systems engineering and IP networking experience </p>
+                Spectrum staking services managed by a team of highly-experienced SRE professionals with over 30 years of cumilative systems engineering and IP networking experience.</p>
         </div>
     </section>
 
@@ -452,11 +461,11 @@
 
         </selection>
 
-        <section class=" ">
+        <section id="MainNet">
             <div class="container ">
                 <div class="row mb-4 ">
                     <div class="card-group ">
-                        <div id="MainNet" class="col-md-4 col-12 p-3 ">
+                        <div class="col-md-4 col-12 p-3 ">
                             <div class="card h-100 p-2 card-transarent mx-auto cardsize ">
                                 <div class="card-title d-flex align-items-center justify-content-between p-4 ">
                                     <img src="images/solana.png " class="w-25 ">
@@ -599,11 +608,11 @@
 
         </selection>
 
-        <section class="mb-5 pb-5 ">
+        <section id="TestNet" class="mb-5 pb-5 ">
             <div class="container mb-5 ">
                 <div class="row mb-5">
                     <div class="card-group ">
-                        <div id="TestNet" class="col-md-4 col-12 p-3 ">
+                        <div class="col-md-4 col-12 p-3 ">
                             <div class="card border-transparent h-100 p-2 mx-auto cardsize">
                                 <div class="card-title d-flex align-items-center justify-content-between p-4 ">
                                     <img src="images/kira_logo.png " class="w-25 ">
@@ -616,7 +625,7 @@
 
                             </div>
                         </div>
-                        <div id="TestNet " class="col-md-4 col-12 p-3 ">
+                        <div class="col-md-4 col-12 p-3 ">
                             <div class="card border-transparent h-100 p-2 mx-auto cardsize">
                                 <div class="card-title text-light d-flex align-items-center justify-content-between p-4 ">
                                     <img src="images/ssv.svg " class="w-25 ">
@@ -634,7 +643,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="TestNet " class="col-md-4 col-12 p-3 ">
+                        <div class="col-md-4 col-12 p-3 ">
                             <div class="card border-transparent h-100 p-2 mx-auto cardsize">
                                 <div class="card-title text-light d-flex align-items-center justify-content-between p-4 ">
                                     <img src="" class="w-25 ">
@@ -654,37 +663,39 @@
         </section>
 
 
-        <section id="#Contacts" class="bgmenugrey ">
-            <div class="container mt-5">
-                <div class="position-relative row">
-                    <div class="col-4 col-md-3"></div>
-                    <div class="col-8 col-md-9">
-                        <div class="row py-2 px-4">
-                            <div class=" col-12 col-md-2 my-auto py-1">
+        <section id="Contacts" class="bgmenugrey ">
+            <div class="container mt-5 px-0">
+                <div class="position-relative row me-1">
+                    <div class="col-3 col-md-3 col-lg-3 col-xl-3 "> <img src="images/bottomtowers.svg " class="position-absolute" style="max-width: 8em; left: 1em; bottom: 0.5em; " alt="spectrum staking towers" />
+                    </div>
+                    <div class="col-9 ps-3">
+                        <div class="row py-2 ">
 
+                            <div class=" col-12 col-md-2 col-lg-2 my-auto py-1">
                             </div>
-
-                            <div class=" col-12 col-md-4 my-auto py-1">
-                                <img class="w-auto" src=" images/email.png ">
-                                <a href="mailto:info@spectrumstaking.net " target="_blank ">info@spectrumstaking.net</a>
+                            <div class=" col-12 col-md-4 col-lg-4 my-auto py-1">
+                                <img src=" images/email.png " style="width: 20px;">
+                                <a href=" mailto:info@spectrumstaking.net " target="_blank ">info@spectrumstaking.net</a>
                             </div>
 
                             <div class="col-12 col-md-2 my-auto py-1 ">
-                                <img class="w-auto " src="images/discord.png ">
+                                <img src="images/discord.png " style="width: 20px;">
                                 <a class=" " href="https://www.google.com/url?q=https%3A%2F%2Fdiscord.gg%2F6RcukM5&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNGTa5-qjub-yO2nrm_PMgDbEYeCcg " target="_blank ">discord</a>
 
                             </div>
                             <div class="col-12 col-md-2 my-auto py-1 ">
-                                <img class="w-auto " src="images/keybase.png ">
+                                <img src="images/keybase.png " style="width: 20px;">
                                 <a class=" " href="http://www.google.com/url?q=http%3A%2F%2Fkeybase.io%2Fspectrum_staking&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNEeX3aEsCstTApmJ5ASj1AFQo1ZYg " target="_blank ">keybase</a>
                             </div>
                             <div class="col-12 col-md-2 my-auto py-1 ">
-                                <img class="w-auto " src="images/twitter.png ">
+                                <img src="images/twitter.png " style="width: 20px;">
                                 <a class=" " href="https://www.google.com/url?q=https%3A%2F%2Ftwitter.com%2FSpectrumStaking&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNEFbFo2HecU0dDhXgpPbb1j4r_FmA " target="_blank ">twitter</a>
                             </div>
+
                         </div>
                     </div>
-                    <img src="images/bottomtowers.svg " class="position-absolute" style="max-width: 9em; left: 1em; bottom: 0.5em; " alt="spectrum staking towers" />
+                    <!--- <img src="images/bottomtowers.svg " class="position-absolute " style="max-width: 9em; left: 1em; bottom: 0.5em; " alt="spectrum staking towers " />-->
+
                 </div>
             </div>
 
