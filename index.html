@@ -203,10 +203,20 @@
             padding: 0 0.6em;
         }
         
-        @media only screen and (max-width: 440px) {
+        .sm-icon {
+            max-width: 20px;
+        }
+        
+        @media only screen and (min-width: 200px) and (max-width: 700px) {
             .position-absolute {
                 bottom: 7em !important;
                 max-width: 5em !important;
+            }
+        }
+        
+        @media only screen and (min-width: 720px) {
+            a:link {
+                font-size: 14px;
             }
         }
         
@@ -256,7 +266,7 @@
     </nav>
 
     <section class="">
-        <div class="container justify-content-between">
+        <div class="container">
 
             <div class="row align-items-center">
                 <div class="col-12 col-md-6 col-lg-6 col-xl-6 pt-5 ps-lg-0">
@@ -274,7 +284,7 @@
 
     <section class="col-12 pt-4 pb-4 ">
         <div class="container">
-            <p class="lead text-start text-md-start text-lg-start mb-6 mb-lg-8 text-light mx-auto ">
+            <p class="lead text-start text-md-start text-lg-start ms-4 ms-md-5 ms-lg-5 ms-xl-5 text-light">
                 Spectrum staking services managed by a team of highly-experienced SRE professionals with over 30 years of cumilative systems engineering and IP networking experience.</p>
         </div>
     </section>
@@ -376,16 +386,16 @@
 
     <selection class="">
         <div class="row py-4">
-            <div class="col-3 col-md-3 col-lg-3 my-auto ms-lg-2 ms-md-2 pe-0">
-                <img class="px-6" src="images/bginfostructure.svg " style="height: 140px; float: right;" alt="background image">
+            <div class="col-3 col-md-3 col-lg-3 my-auto p-0">
+                <img class="" src="images/bginfostructure.svg " style="height: 140px; float: right;" alt="background image">
             </div>
-            <div class="col-5 col-md-5 col-lg-5 text-center text-info pb-5 my-auto px-0">
+            <div class="col-6 col-md-6 col-lg-6 text-center text-info pb-5 my-auto px-0">
                 <p class="fs-4 text-uppercase">
                     Our infrastructure
                 </p>
             </div>
-            <div class="col-3 col-md-3 col-lg- my-auto ms-lg-2" style="overflow: hidden;">
-                <img class="mx-lg-5" src="images/bginfostructure2.svg " style="height: 140px; float: left; overflow: hidden;" alt="background image">
+            <div class="col-3 col-md-3 col-lg-3 my-auto p-0" style="overflow: hidden;">
+                <img class="" src="images/bginfostructure2.svg " style="height: 140px; float: left; overflow: hidden;" alt="background image">
             </div>
         </div>
 
@@ -455,7 +465,7 @@
         <selection class="">
             <div class="row py-4">
                 <div class="col-3 col-md-3 col-lg-3 my-auto">
-                    <img class="mx-lg-5 mx-md-5" src="images/bgmainnet.svg " style="height: 140px; float: right;" alt="background image">
+                    <img class="" src="images/bgmainnet.svg " style="height: 140px; float: right;" alt="background image">
                 </div>
                 <div class="col-6 text-center text-info pb-5 my-auto px-0">
                     <p class="fs-4 text-uppercase ">
@@ -463,7 +473,7 @@
                     </p>
                 </div>
                 <div class="col-3 col-md-3 col-lg-3 my-auto" style="overflow: hidden;">
-                    <img class="mx-lg-5 mx-md-5" src="images/bgmainnet2.svg " style="height: 140px; float: left; overflow: hidden;" alt="background image">
+                    <img class="" src="images/bgmainnet2.svg " style="height: 160px; float: left; overflow: hidden;" alt="background image">
                 </div>
             </div>
 
@@ -676,27 +686,27 @@
                 <div class="position-relative row me-1 ">
                     <div class="col-3 col-md-3 col-lg-3 col-xl-3 "> <img src="images/bottomtowers.svg " class="position-absolute " style="max-width: 8em; left: 2em; bottom: 0.5em; " alt="spectrum staking towers " />
                     </div>
-                    <div class="col-9 ps-3 ">
+                    <div class="col-9 ps-4 small-font">
                         <div class="row py-2 ">
 
                             <div class=" col-12 col-md-2 col-lg-2 my-auto py-1 ">
                             </div>
                             <div class=" col-12 col-md-4 col-lg-4 my-auto py-1 ">
-                                <img src=" images/email.png " style="width: 20px; ">
+                                <img class="sm-icon" src=" images/email.png ">
                                 <a href=" mailto:info@spectrumstaking.net " target="_blank ">info@spectrumstaking.net</a>
                             </div>
 
                             <div class="col-12 col-md-2 my-auto py-1 ">
-                                <img src="images/discord.png " style="width: 20px; ">
+                                <img class="sm-icon" src="images/discord.png ">
                                 <a class=" " href="https://www.google.com/url?q=https%3A%2F%2Fdiscord.gg%2F6RcukM5&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNGTa5-qjub-yO2nrm_PMgDbEYeCcg " target="_blank ">discord</a>
 
                             </div>
                             <div class="col-12 col-md-2 my-auto py-1 ">
-                                <img src="images/keybase.png " style="width: 20px; ">
+                                <img class="sm-icon" src="images/keybase.png ">
                                 <a class=" " href="http://www.google.com/url?q=http%3A%2F%2Fkeybase.io%2Fspectrum_staking&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNEeX3aEsCstTApmJ5ASj1AFQo1ZYg " target="_blank ">keybase</a>
                             </div>
                             <div class="col-12 col-md-2 my-auto py-1 ">
-                                <img src="images/twitter.png " style="width: 20px; ">
+                                <img class="sm-icon" src="images/twitter.png ">
                                 <a class=" " href="https://www.google.com/url?q=https%3A%2F%2Ftwitter.com%2FSpectrumStaking&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNEFbFo2HecU0dDhXgpPbb1j4r_FmA " target="_blank ">twitter</a>
                             </div>
 
@@ -711,8 +721,8 @@
         </section>
 
         <!--<script>
-            $("a").on("click", function() {
-                        document.getElementById("navbar").classList.add("makeDisappear");
+            $("a ").on("click ", function() {
+                        document.getElementById("navbar ").classList.add("makeDisappear ");
         </script>-->
 </body>
 
