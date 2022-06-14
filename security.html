@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Spectrum Staking Security" />
+    <meta name="keywords" content="staking security">
+    <title>Spectrum Staking</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/svg" href="images/favicon.svg">
+    <link rel="stylesheet" href="css/randj.css">
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Blinker&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
+    <style>
+        section {
+            scroll-margin-top: 15rem;
+        }
+        a:link {
+            text-decoration: none;
+        }
+        
+        a {
+            color: white;
+        }
+        
+        a:visited {
+            text-decoration: none;
+        }
+        
+        a:hover {
+            color: #2A506A;
+        }
+        
+        .navbar-toggler {
+            width: 30px;
+            height: 20px;
+            position: relative;
+            margin-right: 0.8em;
+            transition: .5s ease-in-out;
+        }
+        
+        .navbar-toggler,
+        .navbar-toggler:focus,
+        .navbar-toggler:active,
+        .navbar-toggler-icon:focus {
+            outline: none;
+            box-shadow: none;
+            border: 0;
+            position: relative;
+        }
+        
+        .navbar-toggler span {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .toggler-icon {
+            display: block;
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            background: linear-gradient(to right, rgba(195, 39, 132, 100), rgba(33, 169, 206, 100), rgba(168, 199, 59, 100), rgba(245, 203, 50, 100), rgba(239, 144, 8, 100), rgba(255, 51, 51, 100));
+            border-radius: 1px;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: .25s ease-in-out;
+        }
+        
+        .middle-bar {
+            margin-top: 0px;
+        }
+        
+        .navbar-toggler.collapsed .top-bar {
+            position: absolute;
+            top: 0px;
+            transform: rotate(0deg);
+        }
+        
+        .navbar-toggler.collapsed .middle-bar {
+            opacity: 1;
+            position: absolute;
+            top: 10px;
+            filter: alpha(opacity=100);
+        }
+        
+        .navbar-toggler.collapsed .bottom-bar {
+            position: absolute;
+            top: 20px;
+            transform: rotate(0deg);
+        }
+        
+        .navbar-toggler .top-bar {
+            top: inherit;
+            transform: rotate(135deg);
+        }
+        
+        .navbar-toggler .middle-bar {
+            opacity: 0;
+            top: inherit;
+            filter: alpha(opacity=0);
+        }
+        
+        .navbar-toggler .bottom-bar {
+            top: inherit;
+            transform: rotate(-135deg);
+        }
+        
+        .navbar-toggler.collapsed .toggler-icon {
+            background-image: radial-gradient(#ffffff 50%, #96A8B6 50%);
+            opacity: 70%;
+            background-position: 0 0;
+            background-size: 3px 3px;
+            height: 3px;
+            width: 100%;
+        }
+        
+        .btn {
+            background-color: #ffffff;
+        }
+        
+        .btn:hover {
+            background: #2A506A;
+        }
+        
+        a.btn:hover {
+            color: #ffffff;
+        }
+        
+        .text-blue {
+            color: #2A506A;
+        }
+        .dull {color:#94A6B6;}
+
+        .allbodycolor {
+            background-color: #2A506A;
+        }
+        
+        .bgmenugrey {
+            background-color: #96A8B6;
+        }
+        
+        .border-dotted {
+            border: 2px dotted #94A7B4;
+        }
+        
+        .border-transparent {
+            border: 2px solid #4A6A80;
+        }
+        
+        .card {
+            background-color: #2A506A;
+        }
+        
+        .card-transarent {
+            background-color: #4D6D82 !important;
+        }
+        
+        .cardsize {
+            max-width: 380px;
+        }
+        
+        .arrow {
+            width: 3.5em;
+        }
+        
+        .uptower {
+            top: -120px;
+            position: relative;
+        }
+        
+        .narrow {
+            height: 60px;
+        }
+        
+        .navbar {
+            margin: 0%;
+        }
+        
+        .navbar .navbar-nav .nav-link:hover {
+            background-color: #2A506A;
+        }
+        
+        .navbar .nav-item {
+            margin: 0;
+        }
+        
+        .navbar .navbar-nav .nav-link {
+            padding: 0.6em;
+        }
+        
+        .navbar .navbar-brand {
+            padding: 0 0.6em;
+        }
+        
+        .sm-icon {
+            max-width: 20px;
+        }
+        
+        @media only screen and (min-width: 200px) and (max-width: 700px) {
+            .position-absolute {
+                bottom: 7em !important;
+                max-width: 5em !important;
+            }
+            section {
+                scroll-margin-top: 23rem;
+            }
+        }
+        
+        @media only screen and (min-width: 960px) {
+            .navbar {
+                padding: 0;
+            }
+            .navbar .navbar-nav .nav-link {
+                padding: 1em 0.7em;
+                transition: all 0.5s;
+                margin: 0;
+            }
+            .navbar .navbar-brand {
+                padding: 0 0.8em;
+            }
+        }
+        @media all and (min-width: 992px) {
+	.navbar .nav-item .dropdown-menu{ display: none; }
+	.navbar .nav-item:hover .nav-link{   }
+	.navbar .nav-item:hover .dropdown-menu{ display: block; }
+	.navbar .nav-item .dropdown-menu{ margin-top:0; }
+}	
+p {margin-top: 1rem;}
+
+    </style>
+
+</head>
+
+<body class="allbodycolor">
+
+    <nav class="navbar sticky-top navbar-expand-lg navbar-expand-xl navbar-dark bgmenugrey">
+        <div class="container px-0">
+
+            <a class="navbar-brand ms-3" href="https://www.spectrumstaking.net/"><img src="images/spst_logo.svg" style="width:6em" alt="spectrum staking logo" />
+            </a>
+            <button class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="toggler-icon top-bar"></span>
+            <span class="toggler-icon middle-bar"></span>
+            <span class="toggler-icon bottom-bar"></span>
+          </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
+                <ul class="navbar-nav me-auto mb-0 mb-lg-0 justify-content-end flex-fill">
+                    <li class="nav-item dropdown text-end ">
+                        <a class="nav-link text-light" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Validators</a>
+
+                        <div class="dropdown-menu bgmenugrey">
+                        <a class="nav-link text-light text-end text-lg-center text-xl-center " href="https://spectrumstaking.net/#MainNet">MainNet Validator</a>
+                        <a class="nav-link text-light text-end text-lg-center text-xl-center  " href="https://spectrumstaking.net/#TestNet">TestNet Validator</a>
+
+                        </div>
+                    </li>
+                  
+                    <li class="nav-item text-end">
+                        <a class="nav-link text-light" href="https://spectrumstaking.net/security.html">Security</a>
+                    </li>
+                    <li class="nav-item text-end">
+                        <a class="nav-link text-light" href="https://spectrumstaking.net/#Infrastructure">Infrastructure</a>
+                    </li>
+                    <li class="nav-item text-end">
+                        <a class="nav-link text-light pullup" href="#Contacts">Contacts</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="">
+        <div class="container">
+
+            <div class="row align-items-center">
+                <div class="col-12 col-md-6 col-lg-6 col-xl-6 pt-5 ps-lg-0">
+                    <h4 class="display-6 text-start ms-4 ms-md-5 ms-lg-5 ms-xl-5">
+                        <b class="text-light text-uppercase">Spectrum Staking Security</b></h4>
+                        <h2 class="lead ms-5 ms-md-5 ms-lg-5 ms-xl-5 dull my-3"> Best practices and principles in implementing security policy.</h2>
+                   
+                </div>
+                <div class="col-12 col-md-6 col-lg-6">
+                    <img src="images/security.svg" class="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0" alt="spectrum staking security image">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="col-12 pt-4 pb-4 ">
+        <div class="container">
+            <p class="lead text-start text-md-start text-lg-start ms-4 ms-md-5 ms-lg-5 ms-xl-5 text-light">
+                We place an incredibly strong emphasis on security measures given the risks of operating infrastructure supporting digital assets. Our extensive experience in IT systems security allows us to protect these sensitive services with utmost care.
+            </p>
+        </div>
+    </section>
+
+    <div class="container">
+    <selection class="row justify-content-center pt-4 pb-2">
+        <div class="col-12 col-md-10 col-lg-8 text-center text-info pb-4 ">
+            <p class="fs-4 text-uppercase">
+                Security principles</p>
+        </div>
+    </selection>
+
+
+        <section class="ms-4 ms-sm-5 ms-lg-5 ms-xl-5 ms-xxl-5">
+            <div class="container ">
+                <div class="col-112 text-start text-light lead pb-4 ">
+                    <h4>Key management</h4>
+                </div>
+                <div class="row my-auto ">
+                    <div class="col-1 my-auto arrow">
+                        <img src="images/arrows1.svg " alt="image icon ">
+                    </div>                                       
+                <div class="col-10 col-sm-11 col-lg-11 col-xl-11 col-xxl-11 text-start text-light lead ">
+                    <p>All validator private and withdrawal authority keys are always stored on our secure private management systems which are blocked from outside access.</p>
+                </div>
+                <div class="row my-auto ">
+                    <div class="col-1 my-auto arrow">
+                        <img src="images/arrows2.svg " alt="image icon ">
+                    </div>                                       
+                <div class="col-10 col-sm-11 col-lg-11 col-xl-11 col-xxl-11 text-start text-light lead ">
+                    <p>All validator entities and voting keys are backed up in a secure location.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="ms-4 ms-sm-5 ms-lg-5 ms-xl-5 ms-xxl-5">
+            <div class="container ">
+                <div class="col-112 text-start text-light lead py-4  ">
+                    <h4>System access</h4>
+                </div>
+                <div class="row my-auto ">
+                    <div class="col-1 my-auto arrow">
+                        <img src="images/arrows3.svg " alt="image icon ">
+                    </div>                                       
+                <div class="col-10 col-sm-11 col-lg-11 col-xl-11 col-xxl-11 text-start text-light lead ">
+                    <p>All SSH sessions are always authenticated using keys stored on U2F hardware. Password authentication is disallowed.</p>
+                </div>
+                <div class="row my-auto ">
+                    <div class="col-1 my-auto arrow">
+                        <img src="images/arrows4.svg " alt="image icon ">
+                    </div>                                       
+                <div class="col-10 col-sm-11 col-lg-11 col-xl-11 col-xxl-11 text-start text-light lead ">
+                    <p>IP access-lists are used to limit management access from authorized management locations to all of our publicly available systems and nodes.
+                    </p>
+                </div>
+            </div>
+            <div class="row my-auto ">
+                <div class="col-1 my-auto arrow">
+                    <img src="images/arrows9.svg " alt="image icon ">
+                </div>                                       
+            <div class="col-10 col-sm-11 col-lg-11 col-xl-11 col-xxl-11 text-start text-light lead ">
+                <p>Authentication logs are automatically audited with alerts setup for unauthorized access.
+                </p>
+            </div>
+        </div>
+        </section>
+        <section class="ms-4 ms-sm-5 ms-lg-5 ms-xl-5 ms-xxl-5">
+            <div class="container ">
+                <div class="col-112 text-start text-light lead py-4 ">
+                    <h4>Other practices
+                    </h4>
+                </div>
+                <div class="row my-auto ">
+                    <div class="col-1 my-auto arrow">
+                        <img src="images/arrows5.svg " alt="image icon ">
+                    </div>                                       
+                <div class="col-10 col-sm-11 col-lg-11 col-xl-11 col-xxl-11 text-start text-light lead ">
+                    <p>Operating systems are regularly patched with vulnerability updates.
+                    </p>
+                </div>
+                <div class="row my-auto ">
+                    <div class="col-1 my-auto arrow">
+                        <img src="images/arrows7.svg " alt="image icon ">
+                    </div>                                       
+                <div class="col-10 col-sm-11 col-lg-11 col-xl-11 col-xxl-11 text-start text-light lead ">
+                    <p>Only necessary TCP/UDP ports are open to public access.
+                    </p>
+                </div>
+                <div class="row my-auto ">
+                    <div class="col-1 my-auto arrow">
+                        <img src="images/arrows8.svg " alt="image icon ">
+                    </div>                                       
+                <div class="col-10 col-sm-11 col-lg-11 col-xl-11 col-xxl-11 text-start text-light lead ">
+                    <p>Services always run as an unprivileged user and are containerized when feasible.
+                    </p>
+                </div>
+                <div class="row my-auto ">
+                    <div class="col-1 my-auto arrow">
+                        <img src="images/arrows4.svg " alt="image icon ">
+                    </div>                                       
+                <div class="col-10 col-sm-11 col-lg-11 col-xl-11 col-xxl-11 text-start text-light lead ">
+                    <p>“Root” account is never used for services or system administration.
+                    </p>
+                </div>
+
+            </div>
+
+
+        </section>
+    </div>
+
+
+        <selection class="">
+            <div class="row ">
+                <div class="col-3 col-md-3 col-lg-3 my-auto">
+                </div>
+                <div class="col-6 text-center text-info pb-5 my-auto px-0">
+                    
+                </div>
+                <div class="col-3 col-md-3 col-lg-3 my-auto" style="overflow: hidden;">
+                    <img class="" src="images/bgmainnet2.svg " style="height: 160px; float: left; overflow: hidden;" alt="background image">
+                </div>
+            </div>
+
+        </selection>
+
+        <section id="Contacts" class="bgmenugrey ">
+            <div class="container mt-5 px-0 ">
+                <div class="position-relative row me-1 ">
+                    <div class="col-3 col-md-3 col-lg-3 col-xl-3 "> <img src="images/bottomtowers.svg " class="position-absolute " style="max-width: 8em; left: 2em; bottom: 0.5em; " alt="spectrum staking towers " />
+                    </div>
+                    <div class="col-9 ps-4 small-font">
+                        <div class="row py-2 ">
+
+
+                            <div class=" col-12 col-md-4 col-lg-4 my-auto mx-2 p-1 ">
+                                <img class="sm-icon" src="images/email.png ">
+                                <a href=" mailto:info@spectrumstaking.net " target="_blank ">info@spectrumstaking.net</a>
+                            </div>
+
+                            <div class="col-12 col-md-2 my-auto mx-2 p-1 ">
+                                <img class="sm-icon" src="images/discord.png ">
+                                <a class=" " href="https://www.google.com/url?q=https%3A%2F%2Fdiscord.gg%2F6RcukM5&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNGTa5-qjub-yO2nrm_PMgDbEYeCcg " target="_blank ">discord</a>
+
+                            </div>
+                            <div class="col-12 col-md-2 my-auto mx-2 p-1 ">
+                                <img class="sm-icon" src="images/keybase.png ">
+                                <a class=" " href="http://www.google.com/url?q=http%3A%2F%2Fkeybase.io%2Fspectrum_staking&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNEeX3aEsCstTApmJ5ASj1AFQo1ZYg " target="_blank ">keybase</a>
+                            </div>
+                            <div class="col-12 col-md-2 my-auto mx-2 p-1 ">
+                                <img class="sm-icon" src="images/twitter.png ">
+                                <a class=" " href="https://www.google.com/url?q=https%3A%2F%2Ftwitter.com%2FSpectrumStaking&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNEFbFo2HecU0dDhXgpPbb1j4r_FmA " target="_blank ">twitter</a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </section>
+
+     <script>
+            $('.pullup').on('click', function() {
+                $('.navbar-collapse').collapse('hide');
+            });
+        </script>
+
+       
+</body>
+
+</html>
